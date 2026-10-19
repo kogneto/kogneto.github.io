@@ -1,3 +1,8 @@
 _site
 .sass-cache
 .jekyll-metadata
+
+# Local-only files (resume etc.), never committed
+private/
+docs/research/
+.claude/
