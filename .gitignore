@@ -6,3 +6,6 @@ _site
 private/
 docs/research/
 .claude/
+
+# Site copy glossary lives in private/CONTEXT.md; never publish one
+/CONTEXT.md
