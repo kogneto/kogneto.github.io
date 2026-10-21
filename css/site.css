@@ -95,7 +95,8 @@ main { padding: 5rem 0; }
 
 .experience { padding: 1rem 0 0; }
 .jobs { row-gap: 3rem; }
-.job img { max-height: 220px; margin-bottom: 1.5rem; }
+.job picture { display: block; }
+.job img { max-height: 220px; margin: 0 auto 1.5rem; }
 .job li::before {
 	content: "\2022";
 	display: inline-block;
@@ -227,8 +228,8 @@ main { padding: 5rem 0; }
 	.hero-tag { margin-right: auto; margin-left: auto; }
 	.intro-art { text-align: center; }
 	.intro-text { padding: .5rem 12px 0; }
-	.intro-art picture, .job picture { display: block; }
-	.intro-art img, .job img { margin-right: auto; margin-left: auto; }
+	.intro-art picture { display: block; }
+	.intro-art img { margin-right: auto; margin-left: auto; }
 	.job ul, .skill ul {
 		display: inline-block;
 		text-align: left;
