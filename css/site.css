@@ -220,6 +220,23 @@ main { padding: 5rem 0; }
 @media (min-width: 1400px) {
 	.hero .container { max-width: 1320px; }
 }
+/* Phones: center the text blocks and images. Bulleted lists stay left-aligned
+   inside a centered block so the bullets line up. Desktop is unchanged. */
+@media (max-width: 767.98px) {
+	.hero-text, .intro-text, .job, .skill, .project, .education, .credential { text-align: center; }
+	.hero-tag { margin-right: auto; margin-left: auto; }
+	.intro-art { text-align: center; }
+	.intro-text { padding: .5rem 12px 0; }
+	.intro-art picture, .job picture { display: block; }
+	.intro-art img, .job img { margin-right: auto; margin-left: auto; }
+	.job ul, .skill ul {
+		display: inline-block;
+		text-align: left;
+	}
+	.skill ul { width: 16rem; max-width: 100%; }
+	.skill .eyebrow { text-align: center; }
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.button, .offclock, .offclock h2 { transition: none; }
 }
