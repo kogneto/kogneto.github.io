@@ -1,0 +1,184 @@
+/* andrewdeloose.com — one stylesheet, mobile first.
+   Spacing and column widths mirror the Bootstrap grid the old build used
+   (24px gutters, 64rem content width) so the rendered page matches it. */
+
+:root {
+	--text: #212529;
+	--muted: #495057;
+	--light: #f8f9fa;
+	--rule: #dee2e6;
+	--accent: #ffc107;
+	--button: #e9ecef;
+	--band: #000;
+	--band-text: #e9ecef;
+	--hero: radial-gradient(circle at 20% 30%, #3a3f47 0%, #15171a 60%, #0b0c0e 100%);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+	margin: 0;
+	font-family: Inter, sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--text);
+	background: #fff;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { margin: 0 0 30px; font-weight: 600; line-height: 1.2; }
+h1 { margin-bottom: 1rem; font-size: min(3.5rem, 1.475rem + 2.7vw); color: var(--light); }
+h2 { font-size: min(3rem, 1.425rem + 2.1vw); text-decoration: underline; text-underline-offset: 4px; }
+h3 { margin-bottom: 1.5rem; font-size: 1.25rem; line-height: 1.5; }
+p { margin: 0 0 1rem; }
+ul { margin: 0 0 30px; padding: 0; list-style: none; }
+li { margin-bottom: .5rem; font-weight: 500; }
+a { color: inherit; }
+
+/* Grid helpers */
+.container { width: 100%; max-width: 64rem; margin: 0 auto; padding: 0 12px; }
+.row { display: flex; flex-wrap: wrap; margin: 0 -12px; }
+.row > * { width: 100%; padding: 0 12px; }
+
+/* Hero (also the 404 page) */
+.hero {
+	display: flex;
+	align-items: center;
+	min-height: 75vh;
+	padding: 3rem 0;
+	color: #fff;
+	background: var(--hero);
+}
+.hero .container { max-width: none; }
+.hero .row { align-items: center; }
+.hero-sub, .hero-tag { margin: 0; font-weight: 500; color: rgba(255, 255, 255, .5); }
+.hero-sub { font-size: min(1.5rem, 1.275rem + .3vw); }
+.hero-tag { max-width: 34rem; margin-top: 1.5rem; font-size: 1.25rem; }
+.hero-photo { display: none; }
+.hero-photo img { border-radius: .5rem; }
+
+.button {
+	display: inline-block;
+	margin: 1.5rem 5px 5px;
+	padding: 1rem 3rem;
+	font-size: 1.125rem;
+	font-weight: 500;
+	line-height: 1.6;
+	color: var(--text);
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	background: var(--button);
+	border: 1px solid transparent;
+	border-radius: 50rem;
+	transition: .2s ease-in-out;
+}
+.button:hover { color: #fff; background: var(--text); }
+
+/* Content sections */
+main { padding: 5rem 0; }
+.section { position: relative; padding: 4rem 0; overflow: hidden; }
+.section-title { margin-bottom: 3rem; text-align: center; }
+.section-title img { margin: 0 auto 1rem; }
+.eyebrow {
+	margin: 0 0 .25rem;
+	font-size: 1.125rem;
+	font-weight: 600;
+	line-height: 1.5;
+	color: var(--muted);
+	text-transform: uppercase;
+}
+
+.intro .row { row-gap: 1.5rem; justify-content: space-between; }
+.intro-text { padding: .5rem 12px 0 20px; }
+.intro p { margin: 0; font-size: 1.25rem; font-weight: 500; line-height: 1.65; color: var(--muted); }
+
+.experience { padding: 1rem 0 0; }
+.jobs { row-gap: 3rem; }
+.job img { max-height: 220px; margin-bottom: 1.5rem; }
+.job li::before {
+	content: "\2022";
+	display: inline-block;
+	position: relative;
+	top: -1px;
+	width: 1.125rem;
+	font-weight: 700;
+	color: var(--accent);
+}
+.education { margin: 3rem 0 0; font-weight: 500; line-height: 1.65; color: var(--muted); }
+
+.skills .row { row-gap: 1.5rem; justify-content: center; }
+.skills .eyebrow { margin-bottom: 1rem; }
+.skills ul { list-style: disc; }
+
+/* "Off the clock" turns black once it scrolls into view (class added by the inline script) */
+.offclock { text-align: center; background: var(--light); }
+.offclock, .offclock h2 { transition: background-color .5s ease, color .5s ease; }
+.offclock .row { justify-content: center; }
+.offclock img { margin: 0 auto 1rem; }
+.offclock h2 { margin-bottom: 1.5rem; }
+.offclock p { margin: 0; font-size: 1.25rem; font-weight: 500; line-height: 1.65; }
+.offclock.is-dark { color: var(--band-text); background: var(--band); }
+.offclock.is-dark h2 { color: var(--light); }
+
+/* Footer */
+.footer-links { display: flex; justify-content: center; margin-bottom: 1.5rem; }
+.footer-links a { padding: 0 12px; font-weight: 500; color: var(--muted); text-decoration: none; }
+.copyright {
+	margin: 0;
+	padding: 2.5rem 0;
+	font-size: .875rem;
+	line-height: 1.65;
+	color: var(--muted);
+	text-align: center;
+	border-top: 1px solid var(--rule);
+}
+
+/* 404 */
+.error { min-height: 100vh; text-align: center; }
+.error-code {
+	margin: 0;
+	font-size: clamp(5rem, 2rem + 12vw, 10rem);
+	font-weight: 700;
+	line-height: 1;
+	letter-spacing: 4px;
+	color: rgba(255, 255, 255, .5);
+}
+.error .hero-tag { margin-right: auto; margin-left: auto; }
+
+/* Breakpoints (same steps as the old grid) */
+@media (min-width: 576px) {
+	.hero .container { max-width: 540px; }
+}
+@media (min-width: 768px) {
+	.hero .container { max-width: 720px; }
+	.hero-text { width: 75%; }
+	.hero-photo { display: block; width: 41.66666667%; }
+	.intro-art { width: 33.33333333%; }
+	.intro-text { width: 66.66666667%; }
+	.job { width: 50%; }
+	.skill { width: 33.33333333%; }
+	.offclock-text { width: 66.66666667%; }
+}
+@media (min-width: 992px) {
+	.hero .container { max-width: 960px; }
+	.hero-text { width: 66.66666667%; }
+	.hero-photo { width: 33.33333333%; }
+	h1, h2 { letter-spacing: -3px; }
+	.offclock h2 { letter-spacing: -1px; }
+	.intro .row { flex-direction: row-reverse; }
+	.experience .section-title { margin-bottom: 5rem; }
+	.jobs, .skills .row { margin: 0 -24px; }
+	.job, .skill { padding: 0 24px; }
+	.offclock .container { padding-top: 3rem; padding-bottom: 3rem; }
+}
+@media (min-width: 1200px) {
+	.hero .container { max-width: 1140px; }
+	.hero-text { width: 58.33333333%; }
+}
+@media (min-width: 1400px) {
+	.hero .container { max-width: 1320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.button, .offclock, .offclock h2 { transition: none; }
+}
