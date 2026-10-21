@@ -5,3 +5,9 @@
 	Overwriting Default Theme Styles for Better Handling Updates
 -----------------------------------------------------------------*/
 
+/* Small uppercase labels (employer/date lines, skill-group names): keep the
+   template's h5 size without using a heading element. */
+.eyebrow {
+	font-size: var(--cnvs-font-size-h5);
+	line-height: var(--cnvs-line-height-base);
+}
