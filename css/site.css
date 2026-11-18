@@ -202,6 +202,7 @@ main { padding: 5rem 0; }
 	.job { width: 50%; }
 	.skill { width: 50%; }
 	.project { width: 50%; }
+	.projects .row { row-gap: 2.5rem; }
 	.offclock-text { width: 66.66666667%; }
 }
 @media (min-width: 992px) {
