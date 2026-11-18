@@ -55,7 +55,10 @@ a { color: inherit; }
 .hero-sub { font-size: min(1.5rem, 1.275rem + .3vw); }
 .hero-tag { max-width: 34rem; margin-top: 1.5rem; font-size: 1.25rem; }
 .hero-photo { display: none; }
-.hero-photo img { border-radius: .5rem; }
+/* The portrait is black line art on white. It sits on a light disc, and
+   multiplying it over the disc tints its white to match the buttons. */
+.hero-photo picture { display: block; overflow: hidden; background: var(--button); border-radius: 50%; }
+.hero-photo img { mix-blend-mode: multiply; }
 
 .button {
 	display: inline-block;
@@ -194,7 +197,6 @@ main { padding: 5rem 0; }
 @media (min-width: 768px) {
 	.hero .container { max-width: 720px; }
 	.hero-text { width: 75%; }
-	.hero-photo { display: block; width: 41.66666667%; }
 	.intro-art { width: 33.33333333%; }
 	.intro-text { width: 66.66666667%; }
 	.job { width: 50%; }
@@ -205,10 +207,13 @@ main { padding: 5rem 0; }
 @media (min-width: 992px) {
 	.hero .container { max-width: 960px; }
 	.hero-text { width: 66.66666667%; }
-	.hero-photo { width: 33.33333333%; }
+	/* From here up there is room for the portrait beside the hero text,
+	   so it shows there and the intro drops its copy. */
+	.hero-photo { display: block; width: 33.33333333%; }
+	.intro-art { display: none; }
+	.intro .row { justify-content: center; }
 	h1, h2 { letter-spacing: -3px; }
 	.offclock h2 { letter-spacing: -1px; }
-	.intro .row { flex-direction: row-reverse; }
 	.experience .section-title { margin-bottom: 5rem; }
 	.skill { width: 25%; }
 	.jobs, .skills .row, .projects .row { margin: 0 -24px; }
